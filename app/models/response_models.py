@@ -1,0 +1,13 @@
+"""
+Standard API response models.
+"""
+
+from typing import Any
+
+from pydantic import BaseModel
+
+
+class ApiResponse(BaseModel):
+    status: str
+    message: str
+    data: Any | None = None

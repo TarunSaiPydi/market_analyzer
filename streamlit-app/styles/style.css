@@ -1,0 +1,50 @@
+#MainMenu {
+    visibility: hidden;
+}
+
+footer {
+    visibility: hidden;
+}
+
+header {
+    background: transparent;
+}
+
+.main .block-container{
+    max-width:100% !important;
+    padding-left:2rem;
+    padding-right:2rem;
+}
+
+.stButton>button {
+    border-radius: 12px;
+    height: 45px;
+    font-weight: 600;
+}
+
+.block-container {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.stMetric {
+    border-radius: 16px;
+    padding: 15px;
+    background-color: #1b2430;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.stButton button {
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+
+section[data-testid="stSidebar"]{
+    width:320px !important;
+}
+
+section[data-testid="stSidebar"][aria-expanded="false"] ~ div .block-container{
+    padding-left:2rem !important;
+    max-width:100% !important;
+}
