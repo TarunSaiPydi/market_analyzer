@@ -125,28 +125,6 @@ cd streamlit-app
 streamlit run app.py
 ```
 
----
-
-## Screenshots
-
-### Dashboard
-
-(Add Screenshot)
-
-### Search
-
-(Add Screenshot)
-
-### Stock Details
-
-(Add Screenshot)
-
-### Watchlist
-
-(Add Screenshot)
-
----
-
 ## Future Improvements
 
 - Portfolio Tracking
