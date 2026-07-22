@@ -9,7 +9,7 @@ router = APIRouter(
     tags=["Watchlist"],
 )
 
-@router.post("")
+@router.post("/add")
 def add_watchlist(
     request: AddWatchlistRequest,
     current_user=Depends(get_current_user),
@@ -30,7 +30,7 @@ def get_watchlist(
     )
 
 
-@router.delete("/{symbol}")
+@router.delete("/remove/{symbol}")
 def remove_watchlist(
     symbol: str,
     current_user=Depends(get_current_user),

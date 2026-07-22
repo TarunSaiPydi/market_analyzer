@@ -20,7 +20,7 @@ def add_watchlist(symbol: str) -> dict:
     """
 
     return api_client.post(
-        WATCHLIST_ENDPOINT,
+        f"{WATCHLIST_ENDPOINT}/add",
         {
             "symbol": symbol,
         },
@@ -33,5 +33,5 @@ def delete_watchlist(symbol: str) -> dict:
     """
 
     return api_client.delete(
-        f"{WATCHLIST_ENDPOINT}/{symbol}",
+        f"{WATCHLIST_ENDPOINT}/remove/{symbol}",
     )

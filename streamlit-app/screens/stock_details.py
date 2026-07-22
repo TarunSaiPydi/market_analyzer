@@ -2,6 +2,7 @@ import streamlit as st
 
 from api.stocks import history, stock_details
 
+from api.watchlist import add_watchlist
 from components.company_information import (
     render_company_information,
 )
@@ -37,6 +38,15 @@ def render() -> None:
     render_sidebar()
     render_navbar()
 
+    symbol = st.session_state.get("selected_stock")
+
+    if not symbol:
+        st.warning("No stock selected.")
+        go_to(STOCK_SEARCH)
+        return
+
+    st.markdown("<br>", unsafe_allow_html=True)
+
     # --------------------------------------------------
     # Top Navigation Buttons
     # --------------------------------------------------
@@ -52,24 +62,24 @@ def render() -> None:
             return
 
     with right:
+        # Fixed button layout logic & tied it to your add_watchlist function
         if st.button(
             "⭐ Watchlist",
-            width="stretch",
+            key=f"add_watchlist_{symbol}", # Unique key prevents widget runtime conflicts
+            use_container_width=True,       # Fixed the width parameter bug
         ):
-            # TODO:
-            # Keep your existing watchlist logic here
-            pass
+            with st.spinner("Adding stock to watchlist..."):
+                response = add_watchlist(symbol)
+            
+            # Check if your API responds with a success status string
+            if response.get("status") == "success":
+                st.success(f"Added {symbol} to your watchlist!")
+            else:
+                st.error(response.get("message", f"Could not add {symbol}."))
+            
+            st.rerun()
 
     st.divider()
-
-    symbol = st.session_state.get("selected_stock")
-
-    if not symbol:
-        st.warning("No stock selected.")
-        go_to(STOCK_SEARCH)
-        return
-
-    st.markdown("<br>", unsafe_allow_html=True)
 
     # --------------------------------------------------
     # Chart Configuration
