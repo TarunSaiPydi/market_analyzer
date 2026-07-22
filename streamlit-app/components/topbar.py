@@ -11,15 +11,6 @@ def render_topbar(show_auth_buttons: bool = True):
 
     with left:
 
-        st.markdown(
-            """
-            <h2 style="margin-bottom:0">
-                📈 Market Analyzer
-            </h2>
-            """,
-            unsafe_allow_html=True,
-        )
-
         st.caption("Professional Stock Analytics")
 
     if show_auth_buttons:
