@@ -23,6 +23,58 @@ The application enables users to search stocks, analyze historical price movemen
 
 ---
 
+## Application Screenshots
+
+### 🔑 Authentication & Entry
+
+Onboarding interface for user authentication:
+
+<p align="center">
+  <img src="streamlit-app/assets/images/landing_page.png" width="800" alt="Landing Page">
+</p>
+
+### 📊 Interactive Dashboard
+
+Market overview metrics and comprehensive analytical trends:
+
+<p align="center">
+  <img src="streamlit-app/assets/images/dashboard_full.png" width="800" alt="Full Dashboard View">
+  <br><br>
+  <img src="streamlit-app/assets/images/dashboard.png" width="800" alt="Dashboard Core Metrics">
+</p>
+
+### 🔍 Stock Search & Discovery
+
+Finding assets and reviewing matches within the framework:
+
+<p align="center">
+  <img src="streamlit-app/assets/images/searchbox.png" width="800" alt="Search Component">
+  <br><br>
+  <img src="streamlit-app/assets/images/searchbox_with_output.png" width="800" alt="Search Results Interface">
+</p>
+
+### 📈 Stock Details & Analytics
+
+Deep dives into charts, metrics, and parameters:
+
+<p align="center">
+  <img src="streamlit-app/assets/images/stock_details_1.png" width="800" alt="Stock Overview Metrics">
+  <br><br>
+  <img src="streamlit-app/assets/images/stock_details_2.png" width="800" alt="Historical Analysis Chart">
+  <br><br>
+  <img src="streamlit-app/assets/images/stock)details_3.png" width="800" alt="Technical Indicators Panel">
+</p>
+
+### ⭐ Watchlist & Settings
+
+Tracking asset metrics and managing user context parameters:
+
+<p align="center">
+  <img src="streamlit-app/assets/images/watchlist.png" width="800" alt="User Watchlist Tracker">
+  <br><br>
+  <img src="streamlit-app/assets/images/settings.png" width="800" alt="User Settings Profile">
+</p>
+
 ## Technology Stack
 
 ### Backend
@@ -62,38 +114,38 @@ README.md
 
 ### Authentication
 
-| Method | Endpoint |
-|---------|----------|
-| POST | `/sma/v1/signup` |
-| POST | `/sma/v1/login` |
-| GET | `/sma/v1/me` |
+| Method | Endpoint           |
+| ------ | ------------------ |
+| POST   | `/sma/v1/signup` |
+| POST   | `/sma/v1/login`  |
+| GET    | `/sma/v1/me`     |
 
 ### Dashboard
 
-| Method | Endpoint |
-|---------|----------|
-| GET | `/sma/v1/dashboard` |
+| Method | Endpoint              |
+| ------ | --------------------- |
+| GET    | `/sma/v1/dashboard` |
 
 ### Search
 
-| Method | Endpoint |
-|---------|----------|
-| GET | `/sma/v1/search` |
+| Method | Endpoint           |
+| ------ | ------------------ |
+| GET    | `/sma/v1/search` |
 
 ### Stocks
 
-| Method | Endpoint |
-|---------|----------|
-| GET | `/sma/v1/stocks/{symbol}` |
-| GET | `/sma/v1/{symbol}/history` |
-| GET | `/sma/v1/{symbol}/indicators` |
+| Method | Endpoint                        |
+| ------ | ------------------------------- |
+| GET    | `/sma/v1/stocks/{symbol}`     |
+| GET    | `/sma/v1/{symbol}/history`    |
+| GET    | `/sma/v1/{symbol}/indicators` |
 
 ### Watchlist
 
-| Method | Endpoint |
-|---------|----------|
-| GET | `/watchlist` |
-| POST | `/watchlist` |
+| Method | Endpoint                |
+| ------ | ----------------------- |
+| GET    | `/watchlist`          |
+| POST   | `/watchlist`          |
 | DELETE | `/watchlist/{symbol}` |
 
 ---
